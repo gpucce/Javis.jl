@@ -144,7 +144,7 @@ function get_latex_svg(text::LaTeXString)
         svg = LaTeXSVG[text]
     else
         ts = strip_eq(text)
-        command = `tex2svg $ts`
+        command = `cmd /C tex2svg $ts`
         try
             svg = read(command, String)
         catch e
